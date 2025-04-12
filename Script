@@ -1,0 +1,11 @@
+-- Step 1: Create a custom role for executing stored procedures and functions
+CREATE ROLE db_executor;
+GO
+
+-- Step 2: Grant EXECUTE permission to the role
+GRANT EXECUTE TO db_executor;
+GO
+
+-- Step 3: Add a user to the role (replace 'application_user' with the actual username)
+ALTER ROLE db_executor ADD MEMBER application_user;
+GO
